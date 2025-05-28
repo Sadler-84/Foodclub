@@ -1,16 +1,66 @@
+/* Общие стили */
+html {
+    scroll-behavior: smooth;
+    scroll-margin-top: 60px;
+}
+
 body {
     margin: 0;
     text-decoration: none;
     font-family: Arial, sans-serif;
-    padding-top: 80px;
+    padding-top: 60px;
     background-color: #fff;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+hr {
+    border-color: transparent !important;
+    border: 0;
+    border-top: 1px solid transparent;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
+hr.i-size-M {
+    margin: 10px 0 9px !important;
+}
+
+hr.i-size-L {
+    margin: 20px 0 19px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    scroll-margin-top: 60px;
+}
+
+/* Основной контейнер */
+.main-container {
+    max-width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.main-h1 {
+    text-align: center;
+    width: 100%;
+    font-family: "PT Sans Narrow", "Arial Narrow", Verdana, serif;
+    font-size: 22pt;
+    margin: 0 0 29px 0 !important;
+}
+
+h2 {
+    font-family: "PT Sans", Arial, Verdana, serif;
+    font-size: 12pt;
+}
+
+/* Шапка сайта */
 .header-container-fluid {
     background-color: #484848;
     height: 60px;
@@ -27,8 +77,7 @@ html {
     box-sizing: border-box;
 }
 
-.header-content,
-.main-container {
+.header-content {
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
@@ -37,38 +86,11 @@ html {
     width: 100%;
 }
 
-.logo {
-    width: 130px;
-    height: auto;
-    flex-shrink: 0;
-}
-
 nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-}
-
-.left-section {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.right-section {
-    display: flex;
-    align-items: center;
-}
-
-.header-menu {
-    display: flex;
-    gap: 20px;
-}
-
-.social-links {
-    display: flex;
-    align-items: center;
 }
 
 nav a {
@@ -80,18 +102,189 @@ nav a {
 }
 
 nav a:hover {
-    color: #ffd700;
+    color: #a0a0a0;
 }
 
-section {
-    scroll-margin-top: 100px;
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
-h1,
-h2 {
-    scroll-margin-top: 100px;
+.logo {
+    width: 130px;
+    height: auto;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease;
 }
 
+.logo:hover {
+    opacity: 0.7;
+}
+
+.header-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
+.b-header-panel__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 25px;
+    transition: opacity 0.3s ease;
+}
+
+.b-header-panel__icon:hover {
+    opacity: 0.7;
+}
+
+/* Кнопка входа */
+.b-header-panel__login {
+    background-color: #6cc184 !important;
+    color: #fff !important;
+    transition: background-color 0.3s ease;
+}
+
+.b-header-panel__login:hover {
+    background-color: #5aa873 !important;
+    color: #fff !important;
+}
+
+.btn {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #fff;
+    padding: 0 20px;
+    border: none;
+    background-color: #6cc184;
+    font-size: 8pt;
+    line-height: 30px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #5aa873;
+}
+
+/* Поиск */
+#title-search_2 {
+    position: relative;
+}
+
+#title-search-input_2 {
+    width: 100%;
+    font-size: 12pt;
+    font-weight: 300;
+    padding: 0 0 20px 30px;
+    border: none;
+    border-bottom: 1px solid rgb(237, 237, 237);
+    transition: opacity .5s ease;
+    outline: none;
+    color: #000000 !important;
+    caret-color: #000000 !important;
+    background-color: #ffffff !important;
+}
+
+#title-search-input_2:focus {
+    outline: none;
+    border-bottom: 1px solid #6cc184;
+    background-color: #ffffff !important;
+    cursor: text;
+    color: #000000 !important;
+    caret-color: #000000 !important;
+}
+
+#title-search-input_2::placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+
+#title-search_2::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 0px;
+    z-index: 11;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0ic2VhcmNoIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDUxLjM0IDE0NTEuMzQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZmZmO30uY2xzLTJ7ZmlsbDojMzMzO30uY2xzLTN7ZmlsbDpub25lO3N0cm9rZTojMzMzO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDo4MHB4O308L3N0eWxlPjwvZGVmcz48dGl0bGU+c2VhcmNoPC90aXRsZT48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01ODYuMzcsMTA4M0E0OTUuMTYsNDk1LjE2LDAsMCwxLDM5My43LDEzMS44OCw0OTUuMTUsNDk1LjE1LDAsMCwxLDc3OSwxMDQ0LjE1LDQ5MS44OCw0OTEuODgsMCwwLDEsNTg2LjM3LDEwODNaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNTg2LjM3LDEzM2E0NTMuMzQsNDUzLjM0LDAsMSwxLTE3Ny4wOSwzNS43MkE0NTIuMDksNDUyLjA5LDAsMCwxLDU4Ni4zNywxMzNtMC04MGMtMjk1LjQ4LDAtNTM1LDIzOS41My01MzUsNTM1czIzOS41Myw1MzUsNTM1LDUzNSw1MzUtMjM5LjUzLDUzNS01MzVTODgxLjg1LDUzLDU4Ni4zNyw1M1oiLz48bGluZSBjbGFzcz0iY2xzLTMiIHgxPSI5NTAuMTgiIHkxPSI5NTEuODIiIHgyPSIxMzg5LjE4IiB5Mj0iMTM5MC44MiIvPjwvc3ZnPg==) center center / cover no-repeat;
+}
+
+/* Тренды */
+.trends-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    position: relative;
+    padding-right: 100px;
+}
+
+.b-trends__item {
+    border-radius: 7px;
+    font-size: 12px;
+    min-height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: auto !important;
+    background-color: #f4f4f4;
+    color: #900;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.b-trends__item:hover {
+    color: #ff0000;
+}
+
+.trends-button-prev {
+    right: 50px;
+}
+
+.trends-button-next {
+    right: 0;
+}
+
+.trends-button-prev, .trends-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #f4f4f4;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+    margin-top: -10px;
+}
+
+.trends-button-prev:hover, .trends-button-next:hover {
+    background-color: #e9e9e9;
+}
+
+/* Адаптивность */
 @media screen and (max-width: 768px) {
     .header-container-fluid {
         height: auto;
@@ -119,79 +312,4 @@ h2 {
     nav a {
         margin: 5px 0;
     }
-}
-
-.main-h1 {
-    text-align: center;
-    width: 100%;
-    margin: 40px 0;
-    font-family: "PT Sans Narrow", "Arial Narrow", Verdana, serif;
-    font-size: 22pt;
-}
-
-h2 {
-    font-family: "PT Sans", Arial, Verdana, serif;
-    font-size: 12pt;
-}
-
-.trends-wrapper {
-    overflow-x: auto;
-    white-space: nowrap;
-}
-
-.b-trends__item {
-    -webkit-border-radius: 7px;
-    -moz-border-radius: 7px;
-    border-radius: 7px;
-    font-size: 12px;
-    min-height: 40px;
-    line-height: 40px;
-    padding: 0 20px;
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    width: auto !important;
-    background-color: #f4f4f4;
-    color: #900;
-    transition: color .3s ease;
-    -webkit-transition: color .3s ease;
-    -moz-transition: color .3s ease;
-    -ms-transition: color .3s ease;
-    text-decoration: none;
-}
-
-.b-header-panel a {
-    color: #fff;
-    transition: opacity .3s ease;
-    -webkit-transition: opacity .3s ease;
-    -moz-transition: opacity .3s ease;
-    -ms-transition: opacity .3s ease;
-}
-.b-header-panel__icon {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    margin-right: 25px;
-}
-
-.left-section a {
-    margin-right: 15px;
-}
-
-.btn, .btn-default, a.btn, a.btn-default {
-    font-family: "Open Sans", Helvetica, Arial, sans-serif;
-    color: #fff;
-    padding: 0 20px;
-    border: none;
-    background-color: #6cc184;
-    font-size: 8pt;
-    line-height: 30px;
-}
-
-.btn {
-    border-radius: 4px;
 }

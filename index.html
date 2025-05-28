@@ -42,10 +42,21 @@
     </header>
 
     <div class="main-container">
+        <hr>
         <h1 class="main-h1">Foodclub.ru — кулинарное сообщество</h1>
+        <hr>
+
+        <div id="title-search_2" class="hidden-xs">
+            <div title="Очистить поле" id="title-search_2__clear"></div>
+            <form action="">
+                <input id="title-search-input_2" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off" placeholder="Введите название рецепта, ингредиента, тип блюда">
+            </form>
+        </div>
+        <hr class="i-size-L">
 
         <section class="trends">
             <h2>Тренды</h2>
+            <hr class="i-size-M">
             <div class="trends-wrapper">
                 <div class="trends-item">
                     <a href="https://www.foodclub.ru/search/к%20чаю/" class="b-trends__item">К чаю</a>
@@ -58,14 +69,23 @@
                     <a href="https://www.foodclub.ru/search/Яблочные%20пироги/" class="b-trends__item">Яблочные
                         пироги</a>
                 </div>
-                <div class="trends-button-next">
-                    <img src="img/arrow-right.svg" alt="next">
-                </div>
                 <div class="trends-button-prev">
-                    <img src="img/arrow-left.svg" alt="prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="6.243" height="10.485" viewBox="0 0 6.243 10.485">
+                        <g transform="translate(-5.243 5.243) rotate(-45)">
+                            <path d="M5.949,5.95,1.706,10.192A1,1,0,0,1,.292,8.778L3.828,5.243.292,1.707A1,1,0,1,1,1.706.293L5.949,4.535A1,1,0,0,1,5.949,5.95Z" transform="translate(4.414 11.828) rotate(-135)" class="b-trends-button-path"></path>
+                        </g>
+                    </svg>
+                </div>
+                <div class="trends-button-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="6.243" height="10.485" viewBox="0 0 6.243 10.485">
+                        <g transform="translate(-35.769 195.453) rotate(-135)">
+                            <path d="M22.033,19.715,17.79,15.473a1,1,0,0,0-1.414,1.414l3.536,3.535-3.536,3.536a1,1,0,1,0,1.414,1.414l4.243-4.242A1,1,0,0,0,22.033,19.715Z" transform="translate(135.02 162.86) rotate(135)" class="b-trends-button-path"></path>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </section>
+        <hr class="i-size-L">
 
         <section class="youtube-video">
             <h2>Видео рецепты на YouTube</h2>
