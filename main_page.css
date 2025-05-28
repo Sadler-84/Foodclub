@@ -13,7 +13,7 @@ html {
 
 .header-container-fluid {
     background-color: #484848;
-    height: 80px;
+    height: 60px;
     margin: 0;
     color: white;
     display: flex;
@@ -23,7 +23,7 @@ html {
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
 
@@ -68,7 +68,6 @@ nav {
 
 .social-links {
     display: flex;
-    gap: 15px;
     align-items: center;
 }
 
@@ -88,7 +87,8 @@ section {
     scroll-margin-top: 100px;
 }
 
-h1, h2 {
+h1,
+h2 {
     scroll-margin-top: 100px;
 }
 
@@ -97,20 +97,25 @@ h1, h2 {
         height: auto;
         padding: 10px;
     }
+
     nav {
         flex-direction: column;
         align-items: flex-start;
     }
-    .left-section, .right-section {
+
+    .left-section,
+    .right-section {
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
     }
+
     .header-menu {
         flex-direction: column;
         gap: 10px;
         margin: 10px 0;
     }
+
     nav a {
         margin: 5px 0;
     }
@@ -120,4 +125,73 @@ h1, h2 {
     text-align: center;
     width: 100%;
     margin: 40px 0;
+    font-family: "PT Sans Narrow", "Arial Narrow", Verdana, serif;
+    font-size: 22pt;
+}
+
+h2 {
+    font-family: "PT Sans", Arial, Verdana, serif;
+    font-size: 12pt;
+}
+
+.trends-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.b-trends__item {
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    font-size: 12px;
+    min-height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    width: auto !important;
+    background-color: #f4f4f4;
+    color: #900;
+    transition: color .3s ease;
+    -webkit-transition: color .3s ease;
+    -moz-transition: color .3s ease;
+    -ms-transition: color .3s ease;
+    text-decoration: none;
+}
+
+.b-header-panel a {
+    color: #fff;
+    transition: opacity .3s ease;
+    -webkit-transition: opacity .3s ease;
+    -moz-transition: opacity .3s ease;
+    -ms-transition: opacity .3s ease;
+}
+.b-header-panel__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 25px;
+}
+
+.left-section a {
+    margin-right: 15px;
+}
+
+.btn, .btn-default, a.btn, a.btn-default {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: #fff;
+    padding: 0 20px;
+    border: none;
+    background-color: #6cc184;
+    font-size: 8pt;
+    line-height: 30px;
+}
+
+.btn {
+    border-radius: 4px;
 }
