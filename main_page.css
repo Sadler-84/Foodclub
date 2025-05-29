@@ -13,16 +13,16 @@ body {
     box-sizing: border-box;
 }
 
+body a {
+    text-decoration: none;
+}
+
 hr {
-    border-color: transparent !important;
     border: 0;
     border-top: 1px solid transparent;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
     box-sizing: content-box;
     height: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 hr.i-size-M {
@@ -33,8 +33,71 @@ hr.i-size-L {
     margin: 20px 0 19px !important;
 }
 
+/* Заголовки */
 h1, h2, h3, h4, h5, h6 {
     scroll-margin-top: 60px;
+    font-weight: normal;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    line-height: 1.1;
+    color: inherit;
+}
+
+h1.i-ph-animated {
+    color: #333 !important;
+    margin: 0 0 29px 0 !important;
+    font-family: "PT Sans Narrow", "Arial Narrow", Verdana, serif;
+    font-weight: bold;
+    font-size: 22pt !important;
+    text-align: center;
+    height: auto;
+    width: 100%;
+}
+
+h2, .b-h2 {
+    font-family: "PT Sans", Arial, Verdana, serif;
+    font-size: 12pt;
+    font-weight: bold;
+    line-height: 1.5;
+    color: #333;
+}
+
+.h2, h2 {
+    font-size: 30px;
+}
+
+/* Заголовки с линией */
+.b-heading-linethrough {
+    background: url(data:image/gif;base64,R0lGODlhAQABAIAAAO3t7QAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==) repeat-x center;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-heading-linethrough h1, 
+.b-heading-linethrough h2 {
+    background-color: #fff;
+    padding: 0 13px;
+    margin: 0 !important;
+    width: 100%;
+}
+
+.b-heading-linethrough h2 {
+    text-align: center;
+    font-size: 0 !important;
+    color: #fff !important;
+    height: 24px;
+    position: relative;
+    transition: color .5s ease;
+}
+
+.b-heading-linethrough h2.i-ph-animated {
+    color: #333 !important;
+    font-size: 12pt !important;
+    height: auto;
+    width: auto;
 }
 
 /* Основной контейнер */
@@ -45,19 +108,6 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 15px;
     box-sizing: border-box;
     width: 100%;
-}
-
-.main-h1 {
-    text-align: center;
-    width: 100%;
-    font-family: "PT Sans Narrow", "Arial Narrow", Verdana, serif;
-    font-size: 22pt;
-    margin: 0 0 29px 0 !important;
-}
-
-h2 {
-    font-family: "PT Sans", Arial, Verdana, serif;
-    font-size: 12pt;
 }
 
 /* Шапка сайта */
@@ -152,18 +202,7 @@ nav a:hover {
     opacity: 0.7;
 }
 
-/* Кнопка входа */
-.b-header-panel__login {
-    background-color: #6cc184 !important;
-    color: #fff !important;
-    transition: background-color 0.3s ease;
-}
-
-.b-header-panel__login:hover {
-    background-color: #5aa873 !important;
-    color: #fff !important;
-}
-
+/* Кнопки */
 .btn {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
     color: #fff;
@@ -180,6 +219,17 @@ nav a:hover {
     background-color: #5aa873;
 }
 
+.b-header-panel__login {
+    background-color: #6cc184 !important;
+    color: #fff !important;
+    transition: background-color 0.3s ease;
+}
+
+.b-header-panel__login:hover {
+    background-color: #5aa873 !important;
+    color: #fff !important;
+}
+
 /* Поиск */
 #title-search_2 {
     position: relative;
@@ -194,8 +244,8 @@ nav a:hover {
     border-bottom: 1px solid rgb(237, 237, 237);
     transition: opacity .5s ease;
     outline: none;
-    color: #000000 !important;
-    caret-color: #000000 !important;
+    color: #888 !important;
+    caret-color: #888 !important;
     background-color: #ffffff !important;
 }
 
@@ -209,8 +259,8 @@ nav a:hover {
 }
 
 #title-search-input_2::placeholder {
-    color: #fff;
-    opacity: 0.8;
+    color: #888;
+    opacity: 1;
 }
 
 #title-search_2::before {
@@ -222,6 +272,18 @@ nav a:hover {
     left: 0px;
     z-index: 11;
     background: url(data:image/svg+xml;base64,PHN2ZyBpZD0ic2VhcmNoIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDUxLjM0IDE0NTEuMzQiPjxkZWZzPjxzdHlsZT4uY2xzLTF7ZmlsbDojZmZmO30uY2xzLTJ7ZmlsbDojMzMzO30uY2xzLTN7ZmlsbDpub25lO3N0cm9rZTojMzMzO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO3N0cm9rZS13aWR0aDo4MHB4O308L3N0eWxlPjwvZGVmcz48dGl0bGU+c2VhcmNoPC90aXRsZT48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik01ODYuMzcsMTA4M0E0OTUuMTYsNDk1LjE2LDAsMCwxLDM5My43LDEzMS44OCw0OTUuMTUsNDk1LjE1LDAsMCwxLDc3OSwxMDQ0LjE1LDQ5MS44OCw0OTEuODgsMCwwLDEsNTg2LjM3LDEwODNaIi8+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJNNTg2LjM3LDEzM2E0NTMuMzQsNDUzLjM0LDAsMSwxLTE3Ny4wOSwzNS43MkE0NTIuMDksNDUyLjA5LDAsMCwxLDU4Ni4zNywxMzNtMC04MGMtMjk1LjQ4LDAtNTM1LDIzOS41My01MzUsNTM1czIzOS41Myw1MzUsNTM1LDUzNSw1MzUtMjM5LjUzLDUzNS01MzVTODgxLjg1LDUzLDU4Ni4zNyw1M1oiLz48bGluZSBjbGFzcz0iY2xzLTMiIHgxPSI5NTAuMTgiIHkxPSI5NTEuODIiIHgyPSIxMzg5LjE4IiB5Mj0iMTM5MC44MiIvPjwvc3ZnPg==) center center / cover no-repeat;
+}
+
+#title-search_2__clear {
+    width: 16px;
+    height: 16px;
+    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iY2xlYXIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE0NTEuMzQgMTQ1MS4zNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiMzMzM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjgwcHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5jbGVhcjwvdGl0bGU+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iODAuMTciIHkxPSI4MC4xNyIgeDI9IjEzNzEuMTciIHkyPSIxMzcxLjE3Ii8+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iMTM3MS4xNyIgeTE9IjgwLjE3IiB4Mj0iODAuMTciIHkyPSIxMzcxLjE3Ii8+PC9zdmc+) no-repeat center;
+    background-size: cover;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    right: 0;
+    z-index: 11;
 }
 
 /* Тренды */
@@ -253,23 +315,14 @@ nav a:hover {
     color: #ff0000;
 }
 
-.trends-button-prev {
-    right: 50px;
-}
-
+.trends-button-prev,
 .trends-button-next {
-    right: 0;
-}
-
-.trends-button-prev, .trends-button-next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
     background-color: #f4f4f4;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -280,8 +333,221 @@ nav a:hover {
     margin-top: -10px;
 }
 
-.trends-button-prev:hover, .trends-button-next:hover {
+.trends-button-prev {
+    right: 50px;
+}
+
+.trends-button-next {
+    right: 0;
+}
+
+.trends-button-prev:hover,
+.trends-button-next:hover {
     background-color: #e9e9e9;
+}
+
+/* Видео рецепты */
+.b-yt-links__scroll {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.b-yt-links__list {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 40px;
+    min-width: calc(4 * 255px + 3 * 40px);
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+}
+
+.b-yt-links__item {
+    flex: 0 0 255px;
+    width: 255px;
+    height: 357px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 30px 20px -20px rgba(0, 0, 0, 0.302);
+    margin: 0;
+    padding: 0;
+}
+
+.b-yt-links__decor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.071) 60%, #000 100%) 0% 0% no-repeat padding-box;
+    z-index: 1;
+}
+
+.b-yt-links__text {
+    position: absolute;
+    bottom: 28px;
+    left: 30px;
+    width: calc(100% - 30px * 2 - 32px - 10px);
+    font-weight: bold;
+    line-height: 1.2;
+    color: #fff;
+    z-index: 2;
+}
+
+.b-yt-links__yt-icon {
+    position: absolute;
+    bottom: 21px;
+    right: 30px;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+    z-index: 2;
+}
+
+/* Рекомендации */
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.recommendation-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.recommendation-image {
+    width: 360px;
+    height: 220px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.recommendation-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+}
+
+.recommendation-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #900;
+}
+
+.recommendation-title a {
+    color: #900;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.recommendation-title a:hover {
+    color: #ff0000;
+}
+
+/* Отзывы */
+.b-last-comments__item:nth-of-type(1) {
+    display: block;
+}
+
+.b-last-comments__item {
+    display: none;
+    position: relative;
+    width: 50%;
+    height: 210px;
+    color: #484848;
+    line-height: 20px;
+    margin: 0 auto;
+}
+
+.b-last-comments__userpic {
+    position: absolute;
+    top: 23px;
+    left: -95px;
+    width: 64px;
+    height: 64px;
+    border-radius: 51%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.b-last-comments__content {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    background-color: #fff;
+    padding: 30px;
+    height: 210px;
+}
+
+.b-last-comments__author {
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.b-last-comments__text {
+    margin-bottom: 25px;
+}
+
+.b-last-comments__info {
+    font-size: 8pt;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    width: 100%;
+}
+
+/* Подвал сайта */
+footer {
+    background-color: #484848;
+    color: #fff;
+    padding: 30px 0;
+    margin-top: 50px;
+}
+
+footer .footer-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+footer nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+footer nav a:hover {
+    color: #a0a0a0;
 }
 
 /* Адаптивность */
@@ -311,5 +577,26 @@ nav a:hover {
 
     nav a {
         margin: 5px 0;
+    }
+
+    .recommendations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    footer .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    footer nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .recommendations-grid {
+        grid-template-columns: 1fr;
     }
 }
