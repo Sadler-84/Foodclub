@@ -57,6 +57,14 @@
             <form action="">
                 <input id="title-search-input_2" type="text" name="q" value="" size="40" maxlength="50"
                     autocomplete="off" placeholder="Введите название рецепта, ингредиента, тип блюда">
+                <div id="search-suggestion" style="display:none; margin-top: 10px; background-color: #f5f5f5; padding: 15px; border-radius: 8px;">
+                    <a href="#"
+                        style="display: flex; align-items: center; gap: 15px; text-decoration: none; color: #333;">
+                        <img src="img/sirniki.jpg" alt="Сырники"
+                            style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px;">
+                        <span style="font-size: 20px;">Классические сырники из творога</span>
+                    </a>
+                </div>
             </form>
         </div>
         <hr class="i-size-L">
@@ -201,6 +209,20 @@
             </nav>
         </div>
     </footer>
+    <script>
+        const input = document.getElementById('title-search-input_2');
+        const suggestion = document.getElementById('search-suggestion');
+      
+        input.addEventListener('input', function () {
+          if (input.value.trim().length > 0) {
+            suggestion.style.display = 'block';
+          } else {
+            suggestion.style.display = 'none';
+          }
+        });
+      </script>
+      
+
 </body>
 
 </html>
