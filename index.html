@@ -34,6 +34,8 @@
                                 <img src="img/instagram.svg" alt="Instagram"
                                     class="b-header-panel__icon i-instagram hidden-xs hidden-sm">
                             </a>
+                        </div>
+                        <div class="search-auth">
                             <a href="https://www.foodclub.ru/search-m/" target="_blank" title="search">
                                 <img src="img/search.svg" alt="Search"
                                     class="b-header-panel__icon i-instagram hidden-xs hidden-sm">
@@ -210,19 +212,28 @@
         </div>
     </footer>
     <script>
-        const input = document.getElementById('title-search-input_2');
-        const suggestion = document.getElementById('search-suggestion');
-      
-        input.addEventListener('input', function () {
-          if (input.value.trim().length > 0) {
-            suggestion.style.display = 'block';
-          } else {
-            suggestion.style.display = 'none';
-          }
-        });
-      </script>
-      
+        // Показывать крестик только если есть текст
+const input = document.getElementById('title-search-input_2');
+const clearBtn = document.getElementById('title-search_2__clear');
 
+function toggleClearBtn() {
+    if (input.value.length > 0) {
+        clearBtn.style.display = 'block';
+    } else {
+        clearBtn.style.display = 'none';
+    }
+}
+
+input.addEventListener('input', toggleClearBtn);
+clearBtn.addEventListener('click', () => {
+    input.value = '';
+    toggleClearBtn();
+    input.focus();
+});
+
+// Инициализация при загрузке
+toggleClearBtn();
+    </script>
 </body>
 
 </html>
