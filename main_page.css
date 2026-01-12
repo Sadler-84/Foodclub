@@ -1,3 +1,8 @@
+/* Глобальная модель коробки */
+*, *::before, *::after { box-sizing: border-box; }
+
+
+
 /* Общие стили */
 html {
     scroll-behavior: smooth;
@@ -7,12 +12,14 @@ html {
 body {
     margin: 0;
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
     padding-top: 60px;
     background-color: #fff;
     box-sizing: border-box;
-    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 14px;
+    justify-content: center;
+    width: 100%;           /* оставляем только width */
+    overflow-x: hidden;
 }
 
 body a {
@@ -102,14 +109,17 @@ h2, .b-h2 {
     width: auto;
 }
 
+
+/* Сайт */
 /* Основной контейнер */
 .main-container {
+    width: 100%;
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 15px;
     box-sizing: border-box;
-    width: 100%;
+    padding: 0 15px;
+    min-width: 0;          /* добавлено */
 }
 
 /* Шапка сайта */
@@ -177,7 +187,7 @@ nav a:hover {
 .header-menu {
     display: flex;
     gap: 25px;
-    font-size: 14pxS;
+    font-size: 14px;
 }
 
 .right-section {
@@ -186,6 +196,11 @@ nav a:hover {
 }
 
 .social-links {
+    display: flex;
+    align-items: center;
+}
+
+.search-auth {
     display: flex;
     align-items: center;
 }
@@ -242,7 +257,7 @@ nav a:hover {
     width: 100%;
     font-size: 12pt;
     font-weight: 300;
-    padding: 0 0 20px 30px;
+    padding: 0 50px 20px 30px; /* увеличен right padding */
     border: none;
     border-bottom: 1px solid rgb(237, 237, 237);
     transition: opacity .5s ease;
@@ -250,6 +265,10 @@ nav a:hover {
     color: #888 !important;
     caret-color: #888 !important;
     background-color: #ffffff !important;
+    /* обрезка текста с троеточием */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 #title-search-input_2:focus {
@@ -278,10 +297,10 @@ nav a:hover {
 }
 
 #title-search_2__clear {
+    display: none;
     width: 16px;
     height: 16px;
-    background: url(data:image/svg+xml;base64,PHN2ZyBpZD0iY2xlYXIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDE0NTEuMzQgMTQ1MS4zNCI+PGRlZnM+PHN0eWxlPi5jbHMtMXtmaWxsOm5vbmU7c3Ryb2tlOiMzMzM7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLW1pdGVybGltaXQ6MTA7c3Ryb2tlLXdpZHRoOjgwcHg7fTwvc3R5bGU+PC9kZWZzPjx0aXRsZT5jbGVhcjwvdGl0bGU+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iODAuMTciIHkxPSI4MC4xNyIgeDI9IjEzNzEuMTciIHkyPSIxMzcxLjE3Ii8+PGxpbmUgY2xhc3M9ImNscy0xIiB4MT0iMTM3MS4xNyIgeTE9IjgwLjE3IiB4Mj0iODAuMTciIHkyPSIxMzcxLjE3Ii8+PC9zdmc+) no-repeat center;
-    background-size: cover;
+    background: url('data:image/svg+xml;utf8,<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="4" y1="4" x2="12" y2="12" stroke="%23333" stroke-width="2"/><line x1="12" y1="4" x2="4" y2="12" stroke="%23333" stroke-width="2"/></svg>') center center / contain no-repeat;
     cursor: pointer;
     position: absolute;
     top: 4px;
@@ -289,12 +308,16 @@ nav a:hover {
     z-index: 11;
 }
 
+/* Показывать крестик, если есть текст */
+#title-search-input_2:not(:placeholder-shown) ~ #title-search_2__clear {
+    display: block;
+}
+
 /* Тренды */
 .trends-wrapper {
     overflow-x: auto;
     white-space: nowrap;
     position: relative;
-    padding-right: 100px;
 }
 
 .b-trends__item {
@@ -349,10 +372,24 @@ nav a:hover {
     background-color: #e9e9e9;
 }
 
+.trends-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+.trends-header .trends-button-prev,
+.trends-header .trends-button-next {
+    cursor: pointer;
+    margin: 0 5px;
+}
+
 /* Видео рецепты */
 .b-yt-links__scroll {
     overflow-x: auto;
     width: 100%;
+    justify-self: center;
 }
 
 .b-yt-links__list {
@@ -417,9 +454,12 @@ nav a:hover {
 /* Рекомендации */
 .recommendations-grid {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
     padding: 20px 0;
+    min-width: 0;          /* добавлено */
 }
 
 .recommendation-card {
@@ -430,16 +470,13 @@ nav a:hover {
 }
 
 .recommendation-image {
-    width: 360px;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;       /* исправлено */
 }
 
 .recommendation-image img {
     width: 100%;
-    height: 100%;
+    height: auto;          /* исправлено */
     object-fit: cover;
     transition: transform 0.3s ease;
     border-radius: 15px;
@@ -489,6 +526,7 @@ nav a:hover {
 }
 
 .b-last-comments__content {
+    position: relative; /* добавьте это */
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
     background-color: #fff;
     padding: 30px;
@@ -507,9 +545,46 @@ nav a:hover {
 .b-last-comments__info {
     font-size: 8pt;
     position: absolute;
-    bottom: 30px;
     left: 30px;
-    width: 100%;
+    right: 30px;
+    bottom: 15px; /* изменено с 30px на 15px для компактности */
+    width: auto;  /* изменено с 100% */
+    margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .b-last-comments__item {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .b-last-comments__userpic {
+        margin-bottom: 10px;
+    }
+    .b-last-comments__content {
+        width: 100%;
+        word-break: break-word;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        position: relative;
+        padding: 20px;
+        min-height: 120px;
+        height: auto;
+    }
+    .b-last-comments__info {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        bottom: 10px;
+        width: auto;
+        font-size: 11px;
+    }
+    .b-last-comments__text {
+        font-size: 15px;
+        line-height: 1.5;
+        width: 100%;
+        margin-bottom: 8px;
+    }
 }
 
 /* Подвал сайта */
@@ -527,6 +602,8 @@ footer .footer-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    min-width: 0;          /* добавлено */
 }
 
 footer p {
@@ -553,29 +630,36 @@ footer nav a:hover {
     color: #a0a0a0;
 }
 
+
 /* Адаптивность */
+@media screen and (max-width: 1100px) {
+    .recommendations-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .recommendation-image {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .header-container-fluid {
         height: auto;
         padding: 10px;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .left-section,
-    .right-section {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-    }
-
     .header-menu {
+        display: none;
         flex-direction: column;
         gap: 10px;
         margin: 10px 0;
+    }
+
+    .social-links {
+        display: none;
     }
 
     nav a {
@@ -586,20 +670,48 @@ footer nav a:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .recommendation-image {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     footer .footer-container {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
+        gap: 10px;
+        align-items: flex-start;
+        justify-items: center;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    footer p {
+        width: 100%;
+        margin-bottom: 10px;
+        text-align: left;
     }
 
     footer nav ul {
         flex-direction: column;
         gap: 10px;
+        width: 100%;
+        align-items: flex-start;
+        padding-left: 0;
     }
 }
 
 @media (max-width: 480px) {
     .recommendations-grid {
         grid-template-columns: 1fr;
+    }
+    .recommendation-image {
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }

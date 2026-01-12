@@ -34,6 +34,8 @@
                                 <img src="img/instagram.svg" alt="Instagram"
                                     class="b-header-panel__icon i-instagram hidden-xs hidden-sm">
                             </a>
+                        </div>
+                        <div class="search-auth">
                             <a href="https://www.foodclub.ru/search-m/" target="_blank" title="search">
                                 <img src="img/search.svg" alt="Search"
                                     class="b-header-panel__icon i-instagram hidden-xs hidden-sm">
@@ -84,7 +86,7 @@
                     <a href="https://www.foodclub.ru/search/Яблочные%20пироги/" class="b-trends__item">Яблочные
                         пироги</a>
                 </div>
-                <div class="trends-button-prev">
+                <!-- <div class="trends-button-prev">
                     <svg xmlns="http://www.w3.org/2000/svg" width="6.243" height="10.485" viewBox="0 0 6.243 10.485">
                         <g transform="translate(-5.243 5.243) rotate(-45)">
                             <path
@@ -93,6 +95,7 @@
                         </g>
                     </svg>
                 </div>
+                
                 <div class="trends-button-next">
                     <svg xmlns="http://www.w3.org/2000/svg" width="6.243" height="10.485" viewBox="0 0 6.243 10.485">
                         <g transform="translate(-35.769 195.453) rotate(-135)">
@@ -101,7 +104,7 @@
                                 transform="translate(135.02 162.86) rotate(135)" class="b-trends-button-path"></path>
                         </g>
                     </svg>
-                </div>
+                </div> -->
             </div>
         </section>
         <hr class="i-size-L">
@@ -176,31 +179,30 @@
 
         <section class="recipes-reviews">
             <h2>Отзывы к рецептам</h2>
-            <div class="recipes-reviews-wrapper">
-                <div>
-                    <div class="b-last-comments__wrapper">
-                        <div class="b-last-comments__item" id="bx_3218110189_84586">
-                            <div style="background-image: url( '/web/20220323144034/https://www.foodclub.ru/images/avatar/avatar.jpg' );"
-                                class="b-last-comments__userpic"></div>
-                            <div class="b-last-comments__content">
-                                <div class="b-last-comments__author">Fasochka</div>
-                                <div class="b-last-comments__text">
-                                    Мария, Вы передержали карамель. Густота и вязкость образуется при жжении сахара. Чем
-                                    дольше Вы его жжете, тем карамель станет гуще, темнее и впоследствии горше. </div>
-                                <div class="b-last-comments__info"><a
-                                        href="/web/20220323144034mp_/https://www.foodclub.ru/recipes/solenaya-karamel/">Солёная
-                                        карамель</a></div>
-                            </div>
+            <div class="b-last-comments__wrapper">
+                <div class="b-last-comments__item" id="bx_3218110189_84586">
+                    <div style="background-image: url('/web/20220323144034/https://www.foodclub.ru/images/avatar/avatar.jpg');"
+                        class="b-last-comments__userpic"></div>
+                    <div class="b-last-comments__content">
+                        <div class="b-last-comments__author">Fasochka</div>
+                        <div class="b-last-comments__text">
+                            Мария, Вы передержали карамель. Густота и вязкость образуется при жжении сахара. Чем
+                            дольше Вы его жжете, тем карамель станет гуще, темнее и впоследствии горше.
+                        </div>
+                        <hr class="i-size-S">
+                        <div class="b-last-comments__info">
+                            <a href="/web/20220323144034mp_/https://www.foodclub.ru/recipes/solenaya-karamel/">Солёная карамель</a>
                         </div>
                     </div>
                 </div>
+                <!-- Добавьте другие отзывы аналогично -->
             </div>
         </section>
     </div>
     <hr class="i-size-L">
     <footer>
         <div class="footer-container">
-            <p>&copy; 2024 Foodclub. Все права защищены.</p>
+            <p script="justify-content:center">&copy; 2024 Foodclub. Все права защищены.</p>
             <nav>
                 <ul>
                     <li><a href="/contact">Контакты</a></li>
@@ -210,19 +212,28 @@
         </div>
     </footer>
     <script>
-        const input = document.getElementById('title-search-input_2');
-        const suggestion = document.getElementById('search-suggestion');
-      
-        input.addEventListener('input', function () {
-          if (input.value.trim().length > 0) {
-            suggestion.style.display = 'block';
-          } else {
-            suggestion.style.display = 'none';
-          }
-        });
-      </script>
-      
+        // Показывать крестик только если есть текст
+const input = document.getElementById('title-search-input_2');
+const clearBtn = document.getElementById('title-search_2__clear');
 
+function toggleClearBtn() {
+    if (input.value.length > 0) {
+        clearBtn.style.display = 'block';
+    } else {
+        clearBtn.style.display = 'none';
+    }
+}
+
+input.addEventListener('input', toggleClearBtn);
+clearBtn.addEventListener('click', () => {
+    input.value = '';
+    toggleClearBtn();
+    input.focus();
+});
+
+// Инициализация при загрузке
+toggleClearBtn();
+    </script>
 </body>
 
 </html>
